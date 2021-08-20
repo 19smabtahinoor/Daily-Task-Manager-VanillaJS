@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Daily Task Manager</title>
+</head>
+
+<body>
+
+    <header class="bg-white shadow-xl py-2 top-0 sticky z-50">
+        <nav class="flex items-center max-w-screen-lg mx-auto px-12">
+            <div class="flex items-center space-x-3 flex-grow">
+                <img class="w-16 h-16" src="images/favicon.png" alt="logo">
+                <h1 class="hidden md:block lg:block text-2xl text-gray-600 font-semibold select-none">Daily Task Manager
+                </h1>
+            </div>
+
+            <!-- search input  -->
+            <div class="flex items-center space-x-3">
+                <input type="text"
+                 oninput="inputChange(event)"
+                    class="w-66 px-6 py-2 border-2 focus:border-4 focus:border-blue-400 focus:outline-none border-gray-200 rounded-md" placeholder="📝 Search your tasks">
+                <button
+                    class="bg-transparent border border-blue-500 py-2 px-4 rounded-md text-blue-500 transform focus:scale-105 transition duration-300 hover:bg-blue-600 hover:text-white">Search</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-screen-lg mx-auto px-12 my-12">
+        <section>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10">
+
+                <!-- task list  -->
+                <div class="col-span-2">
+
+                    <!-- input box  -->
+                    <div class="flex items-center space-x-3">
+                        <input id="input_field" type="text"
+                            class="w-full px-6 py-2 border-2 focus:border-4 focus:border-blue-400 focus:outline-none border-gray-200 rounded-md" placeholder="📝 Write your tasks">
+                        <button
+                        id="add_button"
+                            class="bg-transparent border border-blue-500 py-2 px-4 rounded-md text-blue-500 transform focus:scale-105 transition duration-300 hover:bg-blue-600 hover:text-white">Add</button>
+                    </div>
+
+                    <!-- all lists  -->
+                    <div class="flex flex-col space-y-4" id="task_list">
+                        <!-- single task  -->
+                    </div>
+                </div>
+
+                <!-- task count  -->
+                <div class="col-span-1">
+                    <div class="flex flex-col p-6 box-border rounded-md shadow-xl border border-gray-200 top-24 sticky">
+
+                        <!-- total tasks  -->
+                        <div class="flex items-center border-b border-gray-300 py-4">
+                            <img src="images/tasks.png" alt="all tasks" class="w-12">
+                            <h3 class="flex flex-grow text-lg text-gray-700">Total Task</h3>
+                            <p class="text-gray-900 font-bold text-2xl" id="total_tasks">0</p>
+                        </div>
+
+                        <!-- done tasks  -->
+                        <div class="flex items-center border-b border-gray-300 py-4">
+                            <img src="images/complete.png" alt="done tasks" class="w-12">
+                            <h3 class="flex flex-grow text-lg text-gray-700">Done</h3>
+                            <p class="text-gray-900 font-bold text-2xl" id="done_tasks">0</p>
+                        </div>
+                        <!-- undone tasks  -->
+                        <div class="flex items-center border-b border-gray-300 py-4">
+                            <img src="images/undone.png" alt="undone" class="w-12">
+                            <h3 class="flex flex-grow text-lg text-gray-700">Undone</h3>
+                            <p class="text-gray-900 font-bold text-2xl" id="undone_tasks">0</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
