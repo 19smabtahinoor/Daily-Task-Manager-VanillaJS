@@ -52,6 +52,7 @@ function deleteButtonListener(){
             e.target.parentNode.remove();
             deleteCount--;
             updateResult();
+            doneButtonListener(deleteCount)
         })
     }
 }
@@ -60,7 +61,7 @@ function deleteButtonListener(){
 
 
 //Completed tasks
-function doneButtonListener(){
+function doneButtonListener(deleteCount){
     const doneButtons = document.getElementsByClassName('done_button');
 
     for ( doneButton of doneButtons) {
@@ -75,9 +76,7 @@ function doneButtonListener(){
                 updateResult();
             }
         
-            if (typeof (event.target.parentNode) != 'undefined' && event.target.parentNode != null){
-                doneTaskCount = 0;
-            }
+           
         })
     }
 }
